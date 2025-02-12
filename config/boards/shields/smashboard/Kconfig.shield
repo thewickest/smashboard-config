@@ -1,3 +1,3 @@
 # No whitespace after the comma or in your keyboard name!
 config SHIELD_SMASHBOARD
-    def_bool $(shields_list_contains,basicnumpad)
+    def_bool $(shields_list_contains,smashboard)

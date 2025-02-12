@@ -1,6 +1,6 @@
 file_format: "1"
-id: basicnumpad
-name: Basicnumpad
+id: smashboard
+name: Smashboard
 type: shield
 url: https://github.com/thewickest/smash-b
 requires: [pro_micro]
