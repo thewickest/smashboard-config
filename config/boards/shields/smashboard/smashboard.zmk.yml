@@ -1,0 +1,8 @@
+file_format: "1"
+id: basicnumpad
+name: Basicnumpad
+type: shield
+url: https://github.com/thewickest/smash-b
+requires: [pro_micro]
+features:
+  - keys
