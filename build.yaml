@@ -20,4 +20,6 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: smashboard
+    shield: smashboard_left
+  - board: nice_nano_v2
+    shield: smashboard_right

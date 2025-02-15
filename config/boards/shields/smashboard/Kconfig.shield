@@ -1,3 +1,5 @@
-# No whitespace after the comma or in your keyboard name!
-config SHIELD_SMASHBOARD
-    def_bool $(shields_list_contains,smashboard)
+config SHIELD_SMASHBOARD_LEFT
+    def_bool $(shields_list_contains,smashboard_left)
+
+config SHIELD_SMASHBOARD_RIGHT
+    def_bool $(shields_list_contains,smashboard_right)
