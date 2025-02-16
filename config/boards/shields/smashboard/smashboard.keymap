@@ -10,7 +10,7 @@
 &kp ESC         &kp Q   &kp W               &kp E           &kp R           &kp T    &kp Y  &kp U            &kp I           &kp O                &kp P      &kp BSPC
 &kp TAB         &kp A   &mt LEFT_CONTROL S  &mt LEFT_GUI D  &mt LEFT_ALT F  &kp G    &kp H  &mt RIGHT_ALT J  &mt LEFT_GUI K  &mt RIGHT_CONTROL L  &kp SEMI   &kp APOS
 &kp LEFT_SHIFT  &kp Z   &kp X               &kp C           &kp V           &kp B    &kp N  &kp M            &kp COMMA       &kp DOT              &kp SLASH  &kp RSHFT
-&trans          &trans  &mo 2               &kp ENTER                                       &sk SPACE        &tog 2          &trans               &trans
+&trans          &trans  &mo 2               &kp ENTER                                       &kp SPACE        &tog 2          &trans               &trans
             >;
         };
 
