@@ -1,37 +1,47 @@
-#include <dt-bindings/zmk/matrix_transform.h>
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+
+&mt { flavor = "tap-preferred"; };
 
 / {
-    chosen {
-        zmk,kscan = &kscan0;
-        zmk,matrix-transform = &default_transform;
-    };
+    keymap {
+        compatible = "zmk,keymap";
 
-    default_transform: keymap_transform0 {
-        compatible = "zmk,matrix-transform";
-        columns = <12>;
-        rows = <4>;
-        map = <
-        //   | Key 1  | Key 2  | Key 3  | Key 4  | Key 5  | Key 6  |
-        //   | Key 7  | Key 8  | Key 9  | Key 10 | Key 11 | Key 12 |
-        //   | Key 13 | Key 14 | Key 15 | Key 16 | Key 17 | Key 18 |
-        //   |   Key 19  |   Key 20  |   Key 21  |      Key 22     |
-            RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5)     RC(0,6) RC(0,7) RC(0,8) RC(0,9) RC(0,10) RC(0,11)
-            RC(1,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5)     RC(1,6) RC(1,7) RC(1,8) RC(1,9) RC(1,10) RC(1,11)
-            RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)     RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,10) RC(2,11)
-            RC(3,0) RC(3,1) RC(3,2) RC(3,3)                                     RC(3,8) RC(3,9) RC(3,10) RC(3,11)
-        >;
-    };
+        layer_0 {
+            bindings = <
+&kp ESC         &kp Q  &kp W               &kp E           &kp R           &kp T    &kp Y  &kp U            &kp I           &kp O                &kp P      &kp BSPC
+&kp TAB         &kp A  &mt LEFT_CONTROL S  &mt LEFT_GUI D  &mt LEFT_ALT F  &kp G    &kp H  &mt RIGHT_ALT J  &mt LEFT_GUI K  &mt RIGHT_CONTROL L  &kp SEMI   &kp APOS
+&kp LEFT_SHIFT  &kp Z  &kp X               &kp C           &kp V           &kp B    &kp N  &kp M            &kp COMMA       &kp DOT              &kp SLASH  &kp RSHFT
+&kp CAPS        &mo 2  &mo 1               &kp ENTER                                                        &kp SPACE       &mo 1                &mo 2      &mo 3
+            >;
+        };
 
-    kscan0: kscan0 {
-        compatible = "zmk,kscan-gpio-matrix";
-        diode-direction = "col2row";
-        wakeup-source;
+        layer_1 {
+            bindings = <
+&kp N1     &kp N2      &kp N3    &kp N4         &kp N5    &kp N6          &kp N7  &kp N8    &kp N9    &kp N0  &kp MINUS  &kp EQUAL
+&kp GRAVE  &kp INSERT  &kp HOME  &kp PAGE_UP    &kp NUHS  &kp LS(NUHS)    &trans  &kp LBKT  &kp RBKT  &trans  &trans     &trans
+&trans     &kp DEL     &kp END   &kp PAGE_DOWN  &trans    &trans          &trans  &kp APOS  &kp BSLH  &trans  &trans     &trans
+&trans     &trans      &trans    &trans                                                     &trans    &trans  &trans     &trans
+            >;
+        };
 
-        row-gpios
-            = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            ;
+        layer_2 {
+            bindings = <
+&trans  &trans  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &trans    &trans  &trans  &trans          &kp UP_ARROW    &trans           &trans
+&trans  &trans  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &trans    &trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans
+&trans  &trans  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &trans    &trans  &trans  &trans          &trans          &trans           &trans
+&trans  &trans  &trans           &kp KP_NUMBER_0                                             &trans          &trans          &trans           &trans
+            >;
+        };
+
+        layer_3 {
+            bindings = <
+&bt BT_CLR_ALL  &trans        &trans        &trans        &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans          &trans        &trans        &trans        &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans          &trans        &trans        &trans                                          &trans  &trans  &trans  &trans
+            >;
+        };
     };
 };
