@@ -1,6 +1,6 @@
 file_format: "1"
 id: nice_view_adapter_smash
-name: nice!view adapter
+name: nice!view adapter smash
 type: shield
 url: https://nicekeyboards.com/nice-view
 requires: [i2c_oled]
